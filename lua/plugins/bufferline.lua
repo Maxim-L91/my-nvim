@@ -2,9 +2,7 @@ vim.opt.termguicolors = true
 require("bufferline").setup({
 	options = {
 		numbers = "ordinal",
-		close_command = "bdelete! %d",
 		mode = "buffers",
-		buffer_close_icon = "",
 		modified_icon = "●",
 		close_icon = "",
 		left_trunc_marker = "",

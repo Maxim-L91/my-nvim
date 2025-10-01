@@ -53,7 +53,11 @@ require("lazy").setup({
 		'akinsho/bufferline.nvim', 
 		version = "*", 
 		dependencies = 'nvim-tree/nvim-web-devicons' 
-	}
+	},
+	{
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 
 })
 
