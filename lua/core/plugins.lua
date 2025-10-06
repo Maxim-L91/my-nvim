@@ -58,6 +58,20 @@ require("lazy").setup({
     "goolord/alpha-nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+	{
+		"lewis6991/gitsigns.nvim",
+		event = { "BufReadPre", "BufNewFile" }
+	},
+	{ "nvim-lualine/lualine.nvim", 
+		dependencies = { "nvim-tree/nvim-web-devicons" } 
+	},
+	{ 'hedyhli/outline.nvim', 
+		config = true 
+	},
+	{
+  	"akinsho/toggleterm.nvim",
+  	version = "*"
+	}
 
 })
 
