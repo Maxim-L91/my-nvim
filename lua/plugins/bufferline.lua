@@ -25,11 +25,3 @@ require("bufferline").setup({
 	}
 })
 
-vim.keymap.set("n", "w", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "q", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>")
-vim.keymap.set("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>")
-vim.keymap.set("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>")
-vim.keymap.set("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>")
--- Быстрое закрытие текущей вкладки
-vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", { desc = "Close current tab" })

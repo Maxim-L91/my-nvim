@@ -22,3 +22,45 @@ vim.keymap.set('n', '<leader>to', ':tabonly<CR>', { desc = "Close Other Tabs" })
 vim.keymap.set('n', '<leader>tnext', ':tabnext<CR>', { desc = "Next Tab" })
 vim.keymap.set('n', '<leader>tprev', ':tabprevious<CR>', { desc = "Previous Tab" })
 
+-- BufferLine
+-- Навигация между вкладками
+vim.keymap.set("n", "e", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "q", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>")
+vim.keymap.set("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>")
+vim.keymap.set("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>")
+vim.keymap.set("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>")
+
+-- Быстрое закрытие текущей вкладки
+vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", { desc = "Close current tab" })
+
+-- cmp
+local M = {}
+
+-- 🔹 Горячие клавиши для nvim-cmp
+M.cmp_mappings = {
+ 	["<C-b>"] = { action = "scroll_docs", args = -4 },
+ 	["<C-f>"] = { action = "scroll_docs", args = 4 },
+ 	["<C-Space>"] = { action = "complete" },
+ 	["<CR>"] = { action = "confirm", opts = { select = true } },
+ 	["<Tab>"] = { action = "select_next_item" },
+ 	["<S-Tab>"] = { action = "select_prev_item" },
+}
+
+-- Outline
+vim.keymap.set("n", "<leader>o", ":Outline<CR>", { desc = "Toggle outline" })
+
+-- Telescope
+local builtin = require("telescope.builtin")
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find Files" })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep,  { desc = "Find Text in Project" })
+vim.keymap.set('n', '<leader>fb', builtin.buffers,    { desc = "Find Buffers" })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags,  { desc = "Help Tags" })
+
+-- Toggleterm
+vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Toggle terminal" })
+vim.keymap.set("t", "<Esc>", [[<C-n>]], { desc = "Exit terminal mode" })
+
+return M
+

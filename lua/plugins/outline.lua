@@ -8,4 +8,3 @@ require("outline").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>o", ":Outline<CR>", { desc = "Toggle outline" })

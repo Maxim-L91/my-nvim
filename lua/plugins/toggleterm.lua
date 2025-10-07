@@ -11,10 +11,6 @@ require("toggleterm").setup({
   },
 })
 
--- Горячие клавиши
-vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { desc = "Toggle terminal" })
-vim.keymap.set("t", "<Esc>", [[<C-n>]], { desc = "Exit terminal mode" })
-
 -- Дополнительно — функция для быстрого запуска git или python
 local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })

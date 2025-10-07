@@ -1,4 +1,10 @@
 local cmp = require("cmp")
+local mappings = require("core.mappings").cmp_mappings
+
+local cmp_mapped = {}
+for key, map in pairs(mappings) do
+  cmp_mapped[key] = cmp.mapping[map.action](map.args or map.opts or map)
+end
 
 cmp.setup({
   snippet = {
@@ -6,18 +12,11 @@ cmp.setup({
       require("luasnip").lsp_expand(args.body)
     end,
   },
-  mapping = cmp.mapping.preset.insert({
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),  -- Enter подтверждает
-    ["<Tab>"] = cmp.mapping.select_next_item(),
-    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-  }),
+  mapping = cmp.mapping.preset.insert(cmp_mapped),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
-  })
+  }),
 })
 
