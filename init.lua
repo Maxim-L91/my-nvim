@@ -17,5 +17,3 @@ require('plugins.gitsigns')
 require('plugins.lualine')
 require('plugins.outline')
 require('plugins.toggleterm')
--- lsp
-require('lsp.tsserver')
